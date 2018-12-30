@@ -1,0 +1,82 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    
+    <!-- ----------------HEAD--------------- -->
+    <!-- ----------------------------------- -->
+    <head>
+        {% block head %}
+            <meta charset="utf-8"/>
+            <link rel="stylesheet" href = "{% static 'ppe3/styleAcceuil.css' %}" />
+            <title>Made In Courcelles - Kirigami</title>
+        {% endblock %}
+    </head>
+    
+    <!-- ----------------BODY--------------- -->
+    <!-- ----------------------------------- -->
+    <body>
+        {% block body %}
+
+            <!-- ------------Header------------- -->
+            
+            <header>
+                {% block header %}
+                    <a href ="index"><img src="{% static 'ppe3/image/logotest.JPG' %}" 
+                            alt="Logo de natien's crafting"/></a>
+                    <h3>Made In Courcelles</h3>
+
+                    <div class ="social-link">
+                        <a href ="http://www.instagram.com/" target="_blank">
+                            <img src="{% static 'ppe3/image/icone_clique.jpg' %}" alt="Lien image vers instagram"/><a/>
+                        <a href="http://www.facebook.com" target="_blank">
+                            <img src="{% static 'ppe3/image/icone_clique.jpg' %}" alt="Lien image vers facebook"/><a/>
+                        <a href ="http://wwww.youtube.com" target="_blank">
+                            <img src="{% static 'ppe3/image/icone_clique.jpg' %}" alt="Lien image vers youtube"/><a/>
+                    </div>
+
+                    <div class ="access">
+                        <a href ="authentification"><img src="{% static 'ppe3/image/compteClient.JPG' %}" 
+                            alt="Lien image vers le compte Client"/><a/>
+                        <a href ="/ppe3/panier"><img src="{% static 'ppe3/image/panierAchat.JPG' %}"
+                            alt="lien image vers le panier d'achat"/><a/>
+                    </div>
+                    
+                {% endblock %}
+                
+            </header>
+                        
+            <!-- ------------ Navigation---------- -->
+                        
+            <nav>
+                {% block navigation %}
+                    <ul>
+                        <a href="/ppe3/index">Accueil</a>
+                        <a href="/ppe3/produits">Produits</a>
+                        <a href="/ppe3/contact">Contact</a>
+                        <a href="/ppe3/a-propos">A propos</a>
+                    </ul>
+                {% endblock %}
+            </nav>
+            
+            <!-- --------------Content------------- -->
+                    
+            <section id="main-content">
+                {% block content %}
+                {% endblock %}
+            </section>
+            
+
+            <!-- ---------------footer------------- -->
+                        
+            <footer>
+                {% block footer %}
+                    <p>C.Dacker - 2018 pour Natien's Crafting</p>
+                    <a href="/ppe3/mentions-legales">Mentions légales</a>
+                {% endblock %}
+            </footer>  
+
+        {% endblock %}         
+    </body>
+    
+
+</html>

@@ -1,8 +1,5 @@
 from django.db import models
-
-# Create your models here.
-class newtable01(models.Model):
-    CODE_POSTAL = models.CharField(max_length=5)
+from django.contrib.auth.models import User
 
 class categorie(models.Model): 
     NOM_CAT = models.CharField(max_length=30)
@@ -16,11 +13,11 @@ class Client(models.Model):
     PRENOM = models.CharField(max_length=255)
     NUM_TEL = models.CharField(max_length=10)
     ADR_MAIL = models.CharField(max_length=255)
+    USER_SESSION = models.CharField(null=True, max_length=500)
 
 class Commande(models.Model):
     CLIENT = models.ForeignKey(Client, on_delete=models.CASCADE, null=True)
     DATE_COMMANDE = models.DateField
-    Role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True)
 
 class Compte(models.Model):
     MDP_COMPTE = models.CharField(max_length=32)
@@ -30,29 +27,34 @@ class etat(models.Model):
     STATUT = models.CharField(max_length=20) 
 
 class Produit (models.Model): 
-    NOM_PRODUIT = models.CharField(max_length= 30)
+    NOM_PRODUIT = models.CharField(max_length=30)
     DESCRIPTION = models.CharField(max_length=400)
-    QUANTITEE = models.IntegerField 
-    TAILLE_PRODUIT = models.DecimalField 
-    POID_PRODUIT = models.DecimalField
+    QUANTITEE_STOCK = models.IntegerField(default=0)
+    HAUTEUR_PRODUIT = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2) 
+    LARGEUR_PRODUIT = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2) 
+    POID_PRODUIT = models.IntegerField(default=0)
     categorie = models.ForeignKey(categorie, on_delete=models.CASCADE, null=True)
-    
+    PRIX_PRODUIT = models.DecimalField(blank=True, null=True, max_digits=8, decimal_places=2) 
 
 class livraison(models.Model): 
     NOM_LIVRAISON = models.CharField(max_length=30)
     TRANSPORTEUR = models.CharField(max_length=30)
-    DUREE_LIV = models.DecimalField
+    DUREE_LIV = models.IntegerField(default=0)
 
 class paiement(models.Model): 
     TYPE = models.CharField(max_length=30)
 
 class adresse(models.Model): 
-    N_VOIRIE = models.CharField(max_length=10)
-    VOIRIE = models.CharField(max_length=30)
-    NOM_RUE = models.CharField(max_length=255)
+    ADRESSE = models.CharField(max_length=255)
     CODE_P  = models.CharField(max_length=5)
     VILLE = models.CharField(max_length=30)
     PAYS = models.CharField(max_length=30)
     CLIENT = models.ForeignKey(Client, on_delete=models.CASCADE, null=True)
-    livraison = models.ForeignKey(livraison, on_delete=models.CASCADE, null=True)
-    produit = models.ForeignKey(Produit, on_delete=models.CASCADE, null=True)
+    livraison = models.ForeignKey(livraison, on_delete=models.CASCADE, null=True)  
+
+class produit_commande (models.Model):
+    QT_PRODUIT = models.IntegerField(default=0)
+    Commande = models.ForeignKey(Commande, on_delete=models.CASCADE,null = True)
+    produit = models.ForeignKey(Produit, on_delete=models.CASCADE, null=True)  
+
+    

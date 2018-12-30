@@ -1,0 +1,46 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    !DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+                <div class="Panier">
+                    <p><strong>Dans votre panier d'achat :</strong></p>
+                    <p><em>Tous les prix indiqués sont TTC</em></p>
+                    <div class="contenu-panier">
+                        {% for p in panier %}
+                            <div class="prod-pan-indiv">
+                                <img src="{% static 'ppe3/image/imgproduittest.jpg' %}" width='100px'/>
+                                <p><a href='/ppe3/panier/sub/{{p.id}}'>-</a> {{p.QT_PRODUIT}} <a href='/ppe3/panier/add/{{p.id}}'>+</a> {{p.produit.NOM_PRODUIT}} {{p.produit.PRIX_PRODUIT}} €</p>
+                                <a href='/ppe3/panier/supprimer/{{p.id}}'>Supprimer ce produit</a>
+                                </br>
+                            </div>
+                        {% endfor %}
+
+                        <p>Total de votre commande : <strong>{{total}} € TTC</strong></p>
+                    </div>
+                    <div class="lien-panier">
+                        <a href='/ppe3/panier/client'>Valider mon panier</a>
+                        <a href='/ppe3/produits'>Continuer mes achats</a>
+                    </div>
+                </div>
+            {% endblock %}
+        </section>
+
+    </body>
+</html>

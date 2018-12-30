@@ -1,0 +1,37 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    !DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+                <div class = "block-produit">
+                    {{ message }}
+                    <p><em>Tous les prix indiqués sont TTC</em></p>
+                    {% for p in produits %}
+                        <div class="prod">
+                            <img src="{% static 'ppe3/image/imgproduittest.jpg' %}" width='180px'/>
+                            <p><a href="produit/{{p.id}}">{{p.NOM_PRODUIT}}</a></p>
+                            <p>{{p.PRIX_PRODUIT}} €</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        </section>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    !DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+                <h4>Espace membre</h4> 
+                <p>Deja inscrit ? Connectez vous !</p> 
+                <br/>
+                <form method="post" action="traitement.py">
+                    <p>
+                        <label for="pseudo">Identifiant :</label>
+                        <input type="text" name="pseudo" id="pseudo" required />
+       
+                        <br />
+                        <br />
+                        <label for="pass">Mot de passe :</label>
+                        <input type="password" name="pass" id="pass" required />
+                        <br />
+                        <div class="button">
+                        <button type="submit">Valider</button>
+                        </div>
+       
+                    </p>
+                </form>
+                <br/>
+                <a href="#">S'inscrire</a>
+            {% endblock %}
+        </section>
+
+    </body>
+</html>

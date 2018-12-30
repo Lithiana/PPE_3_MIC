@@ -1,0 +1,47 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    !DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+            <div class="prd-detail">
+                <div class="img-detail-produit">
+                    <img src="{% static 'ppe3/image/imgproduittest.jpg' %}" width='400px'/>
+                </div>
+                <div class="detail-texte-produit"
+                    <p><strong>{{produit.NOM_PRODUIT}}</strong></p>
+                    <p><strong>Type de produit :</strong> {{produit.categorie.NOM_CAT}}</p>
+                    <p><strong>Description :</strong> {{produit.DESCRIPTION}}</p>
+                    <p><strong>Prix :</strong> {{produit.PRIX_PRODUIT}} €</p>
+                    </br>
+                    <p><strong>Détails du produit :</strong></p>
+                    <p><strong>Poids :</strong> {{produit.POID_PRODUIT}} grammes</P>
+                    <p><strong>Largeur / Hauteur :</strong> {{produit.LARGEUR_PRODUIT}} x {{produit.HAUTEUR_PRODUIT}} cm</p>
+                    <p><strong>Quantitée restante en stock : </strong>{{produit.QUANTITEE_STOCK}} exemplaire(s)</p>
+                    <p><em>Tous les prix indiqués sont TTC</em></p>
+                    <div class="lien-achat">
+                        <a href='/ppe3/produit/ajouter/{{produit.id}}'>Ajouter au panier</a>
+                        <a href='/ppe3/produits'>Revenir aux produits</a>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        </section>
+
+    </body>
+</html>

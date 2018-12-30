@@ -1,0 +1,26 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+                <a href="produits">Achetez maintenant ></a>
+                <img src="{% static 'ppe3/image/testacceuil.jpg' %}" alt="photos des produits"/>    
+            {% endblock %}
+        </section>
+    </body>
+    
+
+</html>

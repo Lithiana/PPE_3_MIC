@@ -1,0 +1,45 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    !DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+                <p>pour un entrepreneur individuel : nom, prénom, domicile ;
+                pour une société : raison sociale, forme juridique, adresse de l'établissement ou 
+                du siège social (et non pas une simple boîte postale), montant du capital social ;
+                adresse de courrier électronique et numéro de téléphone ;
+                pour une activité commerciale : numéro d'inscription au registre du commerce et des 
+                sociétés (RCS) ;
+                pour une activité artisanale : numéro d'immatriculation au répertoire des métiers (RM) ;
+                en cas d'activité commerciale : numéro individuel d'identification fiscale numéro de TVA 
+                intracommunautaire
+                pour une profession réglementée : référence aux règles professionnelles applicables et au 
+                titre professionnel ;
+                nom et adresse de l'autorité ayant délivré l'autorisation d'exercer quand celle-ci est 
+                nécessaire
+                nom du directeur de la publication et coordonnées de l'hébergeur du site (nom, dénomination 
+                ou raison sociale, adresse et numéro de téléphone) ;
+                pour un site marchand, conditions générales de vente (CGV) : prix (exprimé en euros et TTC),
+                 frais et date de livraison, 
+                modalité de paiement, service après-vente, droit de rétractation, durée de l'offre, coût
+                 de la technique de communication à distance ;</p>
+            {% endblock %}
+        </section>
+
+    </body>
+</html>

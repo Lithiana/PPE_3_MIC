@@ -1,0 +1,36 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    !DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+                <h4>A Propos de l'artisan</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper sit amet risus vel egestas. Proin feugiat ipsum eget congue consequat. Maecenas id arcu enim. Suspendisse malesuada ac dui non vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse non mattis sem. Sed et ex ac dui sollicitudin dapibus ac sed nisi. Integer ut lectus id nibh scelerisque consequat. Morbi id purus a est mollis consectetur. Quisque porttitor nisi at finibus pulvinar. Etiam vel neque scelerisque, vehicula velit et, condimentum ante.<br/>
+
+                <br/>Nulla bibendum lacus quis odio pharetra, sit amet imperdiet lacus vulputate. Nullam blandit non enim vel maximus. Quisque nec molestie est. Phasellus sed vestibulum metus. Praesent lacus sem, sollicitudin sed dui non, molestie molestie dolor. Suspendisse varius at eros nec sodales. Cras vel mi a magna ornare porta et at dolor. Sed interdum elit vitae rutrum consectetur. Sed ultricies ornare diam, et vulputate nunc posuere eget. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus convallis arcu ut ante sollicitudin, eu tincidunt justo laoreet. Curabitur finibus, leo a luctus convallis, ex risus auctor ante, sit amet convallis mi ligula hendrerit felis. Fusce dapibus tristique est. Praesent placerat ultrices massa, ac condimentum lacus feugiat at. Sed aliquam massa id ultrices eleifend. Morbi porta in ligula vitae tempus.</p>
+                <br/>
+                <h4>L'entreprise Natien's crafting</h4>
+                <p>Vestibulum ultrices feugiat efficitur. Cras nisi libero, molestie sit amet ultrices non, varius et velit. Fusce maximus dui felis, nec aliquam arcu ullamcorper sed. Nulla et augue eget dui iaculis mattis. Aenean non ornare urna. Donec euismod rhoncus elementum. Nunc gravida ante quis nulla aliquet, nec cursus eros sollicitudin. Nunc molestie congue neque, et aliquet neque posuere vel. Praesent non purus quis felis rhoncus porta. Duis sed bibendum lorem. Sed non ornare purus. Aenean vel fermentum risus. Nam consequat, nisi sed efficitur faucibus, leo velit facilisis mauris, et maximus urna erat at risus. Curabitur ullamcorper lacinia nunc non finibus.<br/><br/>
+
+                Cras in tempus nisl. Fusce ut purus quam. Donec quis risus et velit vestibulum vestibulum. Nam maximus iaculis massa, vehicula laoreet mauris posuere ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc vestibulum dui id quam rutrum porttitor. Curabitur vestibulum nisl nec fermentum blandit. Donec vitae mollis felis. Vestibulum rhoncus sapien sed nibh vulputate porta. Proin elementum purus vitae neque placerat placerat. In ac ornare risus. Nam sagittis turpis justo, nec elementum ligula imperdiet eu. In tincidunt, magna vel vulputate scelerisque, nisi dolor volutpat diam, ullamcorper pretium purus quam non tellus. Suspendisse vitae malesuada dolor, nec consectetur neque. Donec eget nibh at massa convallis interdum. Aliquam nibh lacus, feugiat vel lorem id, pulvinar sollicitudin lorem.
+                </p>  
+            {% endblock %}
+        </section>
+
+    </body>
+</html>

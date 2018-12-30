@@ -1,0 +1,35 @@
+{% extends 'ppe3/base.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+    !DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        {{ block.super }}
+        {% endblock %}
+    </head>
+    
+    <body>
+        {% block body %}
+        {{ block.super }}
+        {% endblock %}
+
+        <section id="main-content">
+            {% block content %}
+                <h4>Formulaire de contact</h4>  
+                <p>Pour toute questions, réclamation ou simplement quelques choses à me dire, ce formulaire de contact est à votre disposition !</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-actions">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            {% endblock %}
+        </section>
+
+    </body>
+</html>
